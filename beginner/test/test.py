@@ -5,9 +5,42 @@ from beginner.math.hannota import hanoi_tower
 from beginner.math.recursion import *
 from beginner.practice.advanced_features import trim
 from beginner.practice.find_min_max import find_min_max
+from beginner.practice.list_comprehension import list_compre
+from beginner.practice.triangles import triangle
 
 
 class MyTestCase(unittest.TestCase):
+    def test_list_compre(self):
+        L2 = list_compre()
+        print(L2)
+        self.assertTrue(L2 == ['hello', 'world', 'apple'], '测试失败!')
+
+    def test_triangle(self):
+        """
+
+        :return:
+        """
+        n = 1
+        results = []
+        while n <= 10:
+            result = triangle(n)
+            print(result)
+            n = n + 1
+            results.append(result)
+        res: bool = results == [
+            [1],
+            [1, 1],
+            [1, 2, 1],
+            [1, 3, 3, 1],
+            [1, 4, 6, 4, 1],
+            [1, 5, 10, 10, 5, 1],
+            [1, 6, 15, 20, 15, 6, 1],
+            [1, 7, 21, 35, 35, 21, 7, 1],
+            [1, 8, 28, 56, 70, 56, 28, 8, 1],
+            [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+        ]
+        self.assertTrue(res, '测试失败!')
+
     def test_iter_dict(self):
         """
         迭代dict
@@ -99,6 +132,11 @@ class MyTestCase(unittest.TestCase):
             print('测试成功!')
 
     def test_find_min_max(self):
+        """
+        使用迭代查找一个list中最小和最大值，并返回一个tuple
+        单元测试
+        :return:
+        """
         if find_min_max([]) != (None, None):
             print('测试失败!')
         elif find_min_max([7]) != (7, 7):
