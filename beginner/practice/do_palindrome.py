@@ -38,3 +38,39 @@ if list(filter(is_palindrome, range(1, 200))) == pre_res:
     print('测试成功!')
 else:
     print('测试失败!')
+
+
+def count():
+    def f(i):
+        def g():
+            return i * i
+
+        return g
+
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i))
+    return fs
+
+
+f1, f2, f3 = count()
+print(f1())
+print(f2())
+print(f3())
+
+
+def inc():
+    x = 0
+
+    def fn():
+        nonlocal x
+        x = x + 1
+        return x
+
+    return fn
+
+
+print()
+f = inc()
+print(f())
+print(f())
