@@ -2,7 +2,10 @@ from beginner.oop.person import Person
 
 
 class Student(Person):
-    def __init__(self, name, score) -> None:
+    count = 0
+    msg = 'mawenhao'
+
+    def __init__(self, name: str, score: int = 60) -> None:
         """
         初始化函数
         :param name: 姓名,继承自Human
@@ -10,6 +13,7 @@ class Student(Person):
         """
         super().__init__(name)
         self.__score = score
+        Student.count = Student.count + 1
 
     def print_obj(self) -> None:
         """
