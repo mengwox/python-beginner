@@ -31,3 +31,30 @@ word = 'Python'
 4. python string slice,会自动处理索引越界问题, 所以`s[:j]`不会报IndexError
 5. slice索引有默认值, 省略的第一个索引默认为0, 省略的第二个索引默认为the end of string
 6. string在python中,和java类似(final修饰),string in python也是不可修改(immutable-不可变对象)
+
+## More Control Flow 流程控制语句
+
+### if语句
+
+结构如:
+if True/False
+do something
+elif True/False (optional)
+do something
+else True/False (optional)
+do something
+
+### for语句
+
+结构如:
+for i in collection:
+do something
+
+### range()函数
+
+用处: iterate over a sequence of numbers
+range class有3个属性:
+
+- start: int, 起始, 非必填
+- stop: int, 终止, 必填
+- step: int, 迭代步长, 非必填

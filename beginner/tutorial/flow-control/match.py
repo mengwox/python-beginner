@@ -1,16 +1,4 @@
-# 3.11 Python Tutorial, 4:More Control Flow Tools
-def abs_num(x):
-    if x < 0:
-        return -x
-    elif x == 0:
-        return x
-    else:
-        return x
-
-
-print(abs_num(-10))
-print(abs_num(0))
-print(abs_num(10))
+# match Statements
 
 
 def http_error(http_status: int):
@@ -25,6 +13,7 @@ def http_error(http_status: int):
             print("unknown http status! status: %d" % http_status)
 
 
+print("match Statements==========================")
 status = 200
 http_error(status)
 status = 400
@@ -35,7 +24,7 @@ status = 404
 http_error(status)
 
 
-def pointer(pointer_point):
+def pointer(pointer_point: tuple):
     match pointer_point:
         case (0, 0):
             print('Origin')
@@ -51,6 +40,7 @@ def pointer(pointer_point):
 
 point = 1
 try:
+    # noinspection PyTypeChecker
     pointer(point)
 except ValueError as ve:
     print(ve.args[0])
@@ -65,6 +55,8 @@ pointer(point)
 
 
 class Point:
+    __match_args__ = ('x', 'y')
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -99,3 +91,24 @@ try:
     where_is(point)
 except ValueError as ve:
     print(ve.args[0])
+
+points = [Point(0, 2), Point(0, 1)]
+match points:
+    case []:
+        print("No points")
+    case [Point(0, 0)]:
+        print("The origin")
+    case [Point(x, y)]:
+        print(f"Single point {x}, {y}")
+    case [Point(0, y1), Point(0, y2)]:
+        print(f"Two on the Y axis at {y1}, {y2}")
+    case _:
+        print("Something else")
+
+
+def match_if(point: Point):
+    match point:
+        case Point(x, y) if x == y:
+            print(f"Y=X at {x}")
+        case Point(x, y):
+            print(f"Not on the diagonal")
