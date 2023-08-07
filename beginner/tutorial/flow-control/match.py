@@ -1,4 +1,5 @@
 # match Statements
+from enum import Enum
 
 
 def http_error(http_status: int):
@@ -112,3 +113,19 @@ def match_if(point: Point):
             print(f"Y=X at {x}")
         case Point(x, y):
             print(f"Not on the diagonal")
+
+
+class Color(Enum):
+    RED = 'red'
+    GREEN = 'green'
+    BLUE = 'blue'
+
+
+color = Color(input("Enter your choice of 'red', 'blue' or 'green': "))
+match color:
+    case Color.RED:
+        print('I see red!')
+    case Color.GREEN:
+        print('Grass is green')
+    case Color.BLUE:
+        print("I'm feeling the blues :(")
