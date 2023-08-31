@@ -8,6 +8,18 @@ python入门教程
 
 # python
 
+## python的35个关键字
+
+```text
+and     continue  finally  is        raise
+as      def       for      lambda    return
+assert  del       from     None      True
+async   elif      global   nonlocal  try
+await   else      if       not       while
+break   except    import   or        with
+class   False     in       pass      yield
+```
+
 ## string字符串
 
 string, 实际上是character的array.
