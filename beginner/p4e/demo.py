@@ -1,4 +1,3 @@
-dicts = {'abc': 1}
-for key in dicts:
-    print('key:', key)
-    print('value:', dicts[key])
+dicts = {}
+dicts[1] = 'abc'
+print(dicts)
