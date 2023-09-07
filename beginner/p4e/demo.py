@@ -1,6 +1,4 @@
-fhand = open('mbox-short.txt')
-for line in fhand:
-    words = line.split()
-    if len(words) < 3 or words[0] != 'From':
-        continue
-    print(words[2])
+dicts = {'abc': 1}
+for key in dicts:
+    print('key:', key)
+    print('value:', dicts[key])
