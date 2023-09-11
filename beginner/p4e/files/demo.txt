@@ -1,2 +1,11 @@
-the clown ran after the car and the car ran into the tent
-and the tent fell down on the clown and the car
+Write a program that reads a file and prints the letters in decreasing order of frequency.
+Your program should convert all the input to lower case and only count the letters a-z.
+Your program should not count spaces, digits, punctuation, or anything other than the letters a-z.
+Find text samples from several different languages and see how letter frequency varies between languages.
+Compare your results with the tables at https://wikipedia.org/wiki/Letter_frequencies.
+
+Fun fact: The word “tuple” comes from the names given to sequences of numbers of varying lengths:
+single, double, triple, quadruple, quintuple, sextuple, septuple, etc.↩︎
+
+Python does not translate the syntax literally. For example, if you try this with a dictionary,
+it will not work as you might expect.↩︎
