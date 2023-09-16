@@ -2,7 +2,7 @@
 # http://www.py4e.com/code3/bs4.zip
 # and unzip it in the same directory as this file
 
-	import ssl
+import ssl
 from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
