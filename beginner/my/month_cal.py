@@ -1,4 +1,4 @@
-rest_life = 30
+rest_life = 10
 
 
 def calculate(father_money: float, my_reverse: float, rate: float):
@@ -24,7 +24,7 @@ def calculate(father_money: float, my_reverse: float, rate: float):
 
 
 father_total = 1300000.0
-rates = 4.0
+rates = 3.0
 while True:
     try:
         my_save = input("请输入每月可存款金额:")
