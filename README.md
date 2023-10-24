@@ -5,6 +5,9 @@ python入门教程
 - [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
 - [OSSU-Python For Everybody](https://www.py4e.com/)
 - [Python官方Tutorial](https://docs.python.org/3/tutorial/index.html)
+- [Python编程快速上手-让繁琐工作自动化](https://automatetheboringstuff.com/)
+- [OSSU-Introduction-to-computer-science-and-programming-in-python-fall-2016](
+  https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
 
 # python
 
@@ -70,3 +73,9 @@ range class有3个属性:
 - start: int, 起始, 非必填
 - stop: int, 终止, 必填
 - step: int, 迭代步长, 非必填
+
+# OSSU-SICP(Python版)
+
+指定当前python文件编码格式:
+
+![指定当前python文件编码格式](images\python指定当前文件编码格式.jpg "Python File Encoding")
