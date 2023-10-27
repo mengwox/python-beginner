@@ -23,8 +23,10 @@ def calculate(father_money: float, my_reverse: float, rate: float):
 	return [month, month / 12, total_father, total_rate]
 
 
-father_total = 1300000.0
-rates = 0.0
+father_total = 1200000.0  # 欠款总金额
+bank_rest = 225700  # 银行欠款额
+father_total += bank_rest
+rates = 2.0  # 年化利率
 while True:
 	try:
 		my_save = input("请输入每月可存款金额:")
