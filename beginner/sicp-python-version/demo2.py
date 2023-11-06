@@ -1,8 +1,10 @@
-numXs = int(input('How many times should I print the letter X? '))
-toPrint = ''
-# concatenate X to toPrint numXs times
-numXs = int(numXs)
-while numXs > 0:
-	toPrint = toPrint + 'X'
-	numXs -= 1
-print(toPrint)
+num = int(input('Enter a Integer: '))
+root = 0
+while root <= num:
+	pwr = 1
+	while pwr < 6:
+		if root ** pwr == num:
+			print('num is', num, '; root is', root, ',pwr is', pwr)
+		pwr += 1
+	root += 1
+print('End!')
