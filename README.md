@@ -23,7 +23,15 @@ break   except    import   or        with
 class   False     in       pass      yield
 ```
 
-## string字符串
+## 数据类型: 序列Sequence
+
+数据类型为序列的有: string, tuple, list, range
+
+以上4种数据比较见下图:
+
+![string, tuple, list, range](images\序列比较.jpg "4种序列类型比较")
+
+### string字符串
 
 string, 实际上是character的array.
 
@@ -34,7 +42,7 @@ word = 'Python'
 # word[0] = P, word[-1] = n
 ```
 
-### Slicing切片
+#### Slicing切片
 
 字符串切片, 相当于java的string.split.
 
@@ -46,6 +54,24 @@ word = 'Python'
 4. python string slice,会自动处理索引越界问题, 所以`s[:j]`不会报IndexError
 5. slice索引有默认值, 省略的第一个索引默认为0, 省略的第二个索引默认为the end of string
 6. string在python中,和java类似(final修饰),string in python也是不可修改(immutable-不可变对象)
+
+### dict(short for Dictionary)
+
+字典, 与java中map一样
+
+结构:
+
+1. k-v序列队(key-value pairs)
+2. 用大括号(curly braces)包裹整个序列队
+
+#### dict key
+
+字典key的数据类型必须满足的2个必要条件:
+
+1. 必须实现`__hash__`方法, 用于计算key的hash值
+2. 必须实现`__eq__`方法, 用于比较key的hash值是否一致
+
+so: 所有不可变的序列都可以作为dict key, 所有可变的序列都不可以作为dict key
 
 ## More Control Flow 流程控制语句
 

@@ -36,3 +36,5 @@ print(t1 == t2)
 print(t1 == t1[::])
 print(find_extreme_divisors(100, 200))
 print(type(range(100)))
+L = [1]
+print(type(L))
