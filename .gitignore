@@ -132,5 +132,6 @@ dmypy.json
 .idea
 beginner/av
 
-# Gpt Api Key
+# Gpt
 gpt4/api_key
+openai-env
