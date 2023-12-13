@@ -131,3 +131,6 @@ dmypy.json
 # Jetbrains PyCharm
 .idea
 beginner/av
+
+# Gpt Api Key
+gpt4/api_key
