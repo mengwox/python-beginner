@@ -133,5 +133,4 @@ dmypy.json
 beginner/av
 
 # Gpt
-gpt4/api_key
 openai-env
