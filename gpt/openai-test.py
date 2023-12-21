@@ -3,13 +3,15 @@ from openai import OpenAI
 client = OpenAI()
 
 completion = client.chat.completions.create(
-	model="gpt-3.5-turbo",
+	model="gpt-3.5",
+	# model="gpt-4",
 	messages=[
 		{"role": "system",
-		 "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
-		{"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+		 "content": "You are a teacher about computer science. and designed to output with chinese."},
+		{"role": "user", "content": "请介绍一下python语言"}
 	]
 )
 
-print(completion.choices[0].message)
-print(completion.choices[0].message)
+print(completion)
+resp_cont = completion.choices[0].message.content
+print(resp_cont)
