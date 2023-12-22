@@ -1,10 +1,16 @@
 from openai import OpenAI
 
+from _gpt_model_enum import GptModelDefines
+
+
+def getModelName(model_enum: GptModelDefines) -> str:
+	return model_enum.value
+
+
 client = OpenAI()
 
 completion = client.chat.completions.create(
-	model="gpt-3.5",
-	# model="gpt-4",
+	model=getModelName(GptModelDefines.GPT3_5_TURBO),
 	messages=[
 		{"role": "system",
 		 "content": "You are a teacher about computer science. and designed to output with chinese."},
