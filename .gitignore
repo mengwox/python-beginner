@@ -134,4 +134,4 @@ beginner/av
 
 # Gpt
 openai-env
-gpt/*_api_key.txt
+gpt/api_key/
