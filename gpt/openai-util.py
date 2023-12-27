@@ -12,5 +12,5 @@ from unittest import TestCase
 
 class GPTTest(TestCase):
 	def test_get_api_key_from_file(self):
-		apiKey = getApiKeyFromFile("openai_api_key.txt")
+		apiKey = getApiKeyFromFile("api_key/openai_api_key")
 		self.assertIsNotNone(apiKey, "api key shouldn't null")

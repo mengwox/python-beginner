@@ -15,8 +15,6 @@ class GptModelDefines(Enum):
 	# gpt4 end
 
 	GPT3_5_TURBO = "gpt-3.5-turbo"
-	"""普通"""
-	GPT3_5_TUBRO_1106 = "gpt-3.5-turbo-1106"
 	""" 最大支持16K上下文 
 	input: $0.0010 / 1K token; output: $0.002 / 1K tokens """
 	GPT_3_5_TUBO_INSTRUCT = "gpt-3.5-turbo-instruct"
