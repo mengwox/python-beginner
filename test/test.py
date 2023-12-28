@@ -8,12 +8,21 @@ from beginner.practice.find_min_max import find_min_max
 from beginner.practice.list_comprehension import list_compre
 from beginner.practice.triangles import triangle
 from gpt.constants import OFFICIAL_API_FILE
-from gpt.gpt_utils import get_api_key
+from gpt.gpt_utils import get_file_content, get_model_list
 
 
 class MyTestCase(unittest.TestCase):
+	def test_print_model_list(self):
+		model_list = get_model_list()
+		not_empty = False
+		for model in model_list:
+			if not not_empty:
+				not_empty = True
+			print(model)
+		self.assertTrue(not_empty)
+
 	def test_get_api_key_from_file(self):
-		api_key = get_api_key(OFFICIAL_API_FILE)
+		api_key = get_file_content(OFFICIAL_API_FILE)
 		self.assertIsNotNone(api_key, "api key shouldn't null")
 
 	def test_list_compre(self):

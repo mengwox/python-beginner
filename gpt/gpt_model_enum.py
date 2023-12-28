@@ -10,8 +10,11 @@ class GptModelDefines(Enum):
 
 	GPT4 = "gpt-4"
 	""" input: $0.03 / 1K token; output: $0.06 / 1K tokens """
-	GPT4_32K = "gpt4-32k"
-	""" input: $0.06 / 1K token; output: $0.12 / 1K tokens """
+	UNAVAILABLE_GPT4_32K = "gpt-4-32k"
+	""" 
+		input: $0.06 / 1K token; output: $0.12 / 1K tokens 
+		目前不可用
+	"""
 	# gpt4 model: end
 
 	GPT3_5_TURBO = "gpt-3.5-turbo"

@@ -1,27 +1,10 @@
-from openai import OpenAI
-
-from _gpt_model_enum import GptModelDefines
 from constants import ROLE_DEFINE
+from gpt_model_enum import GptModelDefines
+from gpt_utils import official_client, get_model_name
 
-
-def getModelName(model_enum: GptModelDefines) -> str:
-	return model_enum.value
-
-
-def getOfficialClient():
-	return OpenAI()
-
-
-def getProxyClient():
-	return OpenAI(
-		api_key='sk-XkrWCMiNpFLHkCnx68A119834534453aBe1f92Ea54405d83',
-		base_url='https://orisound.cn/v1'
-	)
-
-
-client = getOfficialClient()
+client = official_client()
 completion = client.chat.completions.create(
-	model=getModelName(GptModelDefines.GPT4_TUBRO_PREVIEW_1106),
+	model=get_model_name(GptModelDefines.GPT4_TUBRO_PREVIEW_1106),
 	messages=[
 		{"role": "system", "content": ROLE_DEFINE},
 		{"role": "user", "content": "springframework.validation是怎么实现入参校验的?"}
