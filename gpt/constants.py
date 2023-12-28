@@ -1,11 +1,17 @@
 SYSTEM_PROMPT = 'As a computer science teacher, you are expected to provide detailed and accurate answers in Chinese.'
 
-LOCAL_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
-# 官方Api Key
-OFFICIAL_API_FILE = LOCAL_PATH + 'official-api-key'
-# Proxy Api Key
-PROXY_API_FILE = LOCAL_PATH + 'proxy-api-key'
-# Proxy Api Url
-PROXY_URL = LOCAL_PATH + 'proxy-url'
+LOCAL_API_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
+# 官方api key
+OFFICIAL_API_FILE = LOCAL_API_PATH + 'official-api-key'
+# proxy api key
+PROXY_API_FILE = LOCAL_API_PATH + 'proxy-api-key'
+# proxy api url
+PROXY_URL = LOCAL_API_PATH + 'proxy-url'
+
+# store prompt file
+LOCAL_FILES_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\'
+# user prompt
+PROMPT_FILE = LOCAL_FILES_PATH + 'files\\current_prompt'
+HISTORY_PROMPT = LOCAL_FILES_PATH + 'history\\history_prompts.md'
 
 UTF8 = 'utf-8'

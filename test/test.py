@@ -1,3 +1,4 @@
+import traceback
 import unittest
 from collections.abc import Iterable
 
@@ -8,10 +9,20 @@ from beginner.practice.find_min_max import find_min_max
 from beginner.practice.list_comprehension import list_compre
 from beginner.practice.triangles import triangle
 from gpt.constants import OFFICIAL_API_FILE
-from gpt.gpt_utils import get_file_content, get_model_list
+from gpt.gpt_utils import get_file_content, get_model_list, completion_top_append_file
 
 
 class MyTestCase(unittest.TestCase):
+	def test_completion_top_append_file(self):
+		content = 'total token: 600, input token: 45, output token: 555'
+		result = True
+		try:
+			completion_top_append_file(content)
+		except FileNotFoundError:
+			traceback.print_exc()
+			result = False
+		self.assertTrue(result)
+
 	def test_print_model_list(self):
 		model_list = get_model_list()
 		not_empty = False

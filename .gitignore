@@ -136,3 +136,4 @@ beginner/av
 openai-env
 gpt/api_key/
 gpt/files/
+gpt/history/
