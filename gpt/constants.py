@@ -1,6 +1,4 @@
-ROLE_DEFINE = 'You are a computer science teacher' \
-              'and designed to output with chinese.' \
-              'Should answer in sufficient detail and accuracy'
+SYSTEM_PROMPT = 'As a computer science teacher, you are expected to provide detailed and accurate answers in Chinese.'
 
 LOCAL_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
 # 官方Api Key

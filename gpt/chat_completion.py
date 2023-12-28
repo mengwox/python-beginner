@@ -1,12 +1,11 @@
-from constants import ROLE_DEFINE
-from gpt_model_enum import GptModelDefines
-from gpt_utils import official_client, get_model_name
+from constants import SYSTEM_PROMPT
+from gpt_utils import *
 
 client = official_client()
 completion = client.chat.completions.create(
 	model=get_model_name(GptModelDefines.GPT4_TUBRO_PREVIEW_1106),
 	messages=[
-		{"role": "system", "content": ROLE_DEFINE},
+		{"role": "system", "content": SYSTEM_PROMPT},
 		{"role": "user", "content": "springframework.validation是怎么实现入参校验的?"}
 	]
 )
