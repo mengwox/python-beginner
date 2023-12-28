@@ -135,3 +135,4 @@ beginner/av
 # Gpt
 openai-env
 gpt/api_key/
+gpt/files/
