@@ -1,7 +1,7 @@
 from gpt.gpt_utils import *
 
 prompt = get_file_content(PROMPT_FILE)
-model = GptModelDefines.GPT4
+model = GptModelDefines.GPT4_TUBRO_PREVIEW_1106
 # client = proxy_client()
 client = official_client()
 
@@ -15,7 +15,7 @@ usage_count = completion.usage
 formatted_string = f"""
 {current_time}
 
-Me:
+Me :
 
 {prompt}
 
@@ -23,7 +23,8 @@ ChatGpt {get_model_name(model)}:
 
 {resp_cont}
 
-总token: {usage_count.total_tokens}, input token: {usage_count.prompt_tokens}, output token: {usage_count.completion_tokens}:
+总token: {usage_count.total_tokens}, input token: {usage_count.prompt_tokens}, 
+output token: {usage_count.completion_tokens}:
 
 ---
 """
