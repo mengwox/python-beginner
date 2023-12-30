@@ -11,6 +11,23 @@ python入门教程
 
 # python
 
+### python函数类型
+
+- 必填参数(位置参数)
+- 默认参数, 有默认值
+- 可变参数
+- 关键字参数
+
+```python
+def param(req_param, def_param='123', *param, **kwargs):
+  """
+  req_param: 必填参数
+  def_param: 默认参数
+  *param: 可变参数
+  **kwargs: 关键字参数
+  """
+```
+
 ## python的35个关键字
 
 ```text
@@ -29,7 +46,7 @@ class   False     in       pass      yield
 
 以上4种数据比较见下图:
 
-![string, tuple, list, range](images\序列比较.jpg "4种序列类型比较")
+![string, tuple, list, range](.\images\序列比较.jpg "4种序列类型比较")
 
 ### string字符串
 
@@ -104,4 +121,4 @@ range class有3个属性:
 
 指定当前python文件编码格式:
 
-![指定当前python文件编码格式](images\python指定当前文件编码格式.jpg "Python File Encoding")
+![指定当前python文件编码格式](.\images\python指定当前文件编码格式.jpg "Python File Encoding")
