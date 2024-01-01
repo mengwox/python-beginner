@@ -1,4 +1,9 @@
-SYSTEM_PROMPT = 'As a computer science teacher, you are expected to provide detailed and accurate answers in Chinese.'
+# 英文提示
+SYSTEM_PROMPT_ENGLISH = ('As a computer science teacher, you are expected to provide detailed '
+                         'and accurate answers in English.')
+# 中文提示
+SYSTEM_PROMPT_CHINESE = ('As a computer science teacher, you are expected to provide detailed '
+                         'and accurate answers in Chinese.')
 
 LOCAL_API_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
 # 官方api key
