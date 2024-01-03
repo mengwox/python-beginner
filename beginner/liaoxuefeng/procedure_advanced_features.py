@@ -11,6 +11,8 @@ def process_range(start: int, end: int, func):
     :param func: 应用于每个数的函数
     """
     result = 0
+    if not callable(func):
+        raise TypeError('func must be callable')
     for n in range(start, end + 1):
         try:
             result = result + func(n)
