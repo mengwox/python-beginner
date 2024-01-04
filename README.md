@@ -50,7 +50,7 @@ class   False     in       pass      yield
 
 以上4种数据比较见下图:
 
-![string, tuple, list, range](.\images\序列比较.jpg "4种序列类型比较")
+![string, tuple, list, range](./images/序列比较.jpg "4种序列类型比较")
 
 ### string字符串
 
@@ -125,4 +125,4 @@ range class有3个属性:
 
 指定当前python文件编码格式:
 
-![指定当前python文件编码格式](.\images\python指定当前文件编码格式.jpg "Python File Encoding")
+![指定当前python文件编码格式](./images/python指定当前文件编码格式.jpg "Python File Encoding")
