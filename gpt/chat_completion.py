@@ -3,7 +3,8 @@ from gpt.gpt_utils import *
 prompt = get_file_content(PROMPT_FILE)
 model = GptModelDefines.GPT4_TUBRO_PREVIEW_1106
 # client = proxy_client()
-client = official_client()
+# client = official_client()
+client = official_safe_client()
 
 completion = get_chat_completion(prompt, client, model)
 
@@ -28,6 +29,6 @@ output token: {usage_count.completion_tokens}:
 
 ---
 """
-
+print('\n' + formatted_string)
 # 对话写入文件
 completion_top_append_file(formatted_string)

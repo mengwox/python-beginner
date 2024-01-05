@@ -83,6 +83,9 @@ def official_client():
     return OpenAI(api_key=official_api_key())
 
 
+def official_safe_client():
+    return OpenAI(base_url=get_file_content(OFFICIAL_SAFE_URL), api_key=official_api_key())
+
 def proxy_client():
     return OpenAI(
         api_key=get_file_content(PROXY_API_FILE),
