@@ -44,7 +44,8 @@ def get_chat_completion(prompt: str,
     completion = client.chat.completions.create(
         model=get_model_name(gpt_model_define),
         messages=[
-            {"role": "system", "content": SYSTEM_PROMPT_ENGLISH},
+            {"role": "system", "content": SYSTEM_PROMPT_CHINESE},
+            {"role": "system", "content": SYSTEM_PROMPT_FORMAT},
             {"role": "user", "content": prompt}
         ]
     )

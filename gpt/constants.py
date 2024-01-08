@@ -4,6 +4,12 @@ SYSTEM_PROMPT_ENGLISH = ('As a computer science teacher, you are expected to pro
 # 中文提示
 SYSTEM_PROMPT_CHINESE = ('As a computer science teacher, you are expected to provide detailed '
                          'and accurate answers in Chinese.')
+# Prompt格式定义
+SYSTEM_PROMPT_FORMAT = """
+Instructions you must follow:
+- Don't use code blocks for non-coding questions. Wrap code blocks in triple backticks, and denote them with the language name.
+- Math formula should be displayed in katex syntax
+"""
 
 LOCAL_API_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
 # 官方api key
