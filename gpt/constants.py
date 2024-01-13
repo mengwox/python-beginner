@@ -25,6 +25,7 @@ PROXY_URL = LOCAL_API_PATH + 'proxy-url'
 LOCAL_FILES_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\'
 # user prompt
 PROMPT_FILE = LOCAL_FILES_PATH + 'files\\current_prompt'
+# HISTORY_PROMPT = LOCAL_FILES_PATH + 'history\\history_prompts_others.md'
 HISTORY_PROMPT = LOCAL_FILES_PATH + 'history\\history_prompts.md'
 
 UTF8 = 'utf-8'
