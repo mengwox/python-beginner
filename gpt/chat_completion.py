@@ -10,7 +10,7 @@ client = official_safe_client()
 model = GptModelDefines.GPT4_TUBRO_PREVIEW_1106
 
 # 获取gpt api completion, 打印内容并写入文件
-completion = get_chat_completion(prompt)
+completion = get_chat_completion(prompt, client, model)
 resp_cont = completion.choices[0].message.content
 current_time = get_current_time()
 usage_count = completion.usage
@@ -18,11 +18,11 @@ usage_count = completion.usage
 formatted_string = f"""
 {current_time}
 
-Me :
+***Me :***
 
 {prompt}
 
-ChatGpt {completion.model}:
+***ChatGpt {completion.model}:***
 
 {resp_cont}
 

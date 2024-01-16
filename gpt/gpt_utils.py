@@ -108,13 +108,14 @@ def official_client():
 
 
 def official_safe_client():
-    return OpenAI(base_url=get_file_content(OFFICIAL_SAFE_URL), api_key=official_api_key())
+    return OpenAI(
+        base_url=get_file_content(OFFICIAL_SAFE_URL) + '/v1',
+        api_key=official_api_key())
 
 def proxy_client():
     return OpenAI(
         api_key=get_file_content(PROXY_API_FILE),
-        base_url=get_file_content(PROXY_URL)
-    )
+        base_url=get_file_content(PROXY_URL) + '/v1')
 
 
 def get_model_list() -> List[str]:
