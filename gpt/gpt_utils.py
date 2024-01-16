@@ -4,6 +4,7 @@ import traceback
 from datetime import datetime
 from typing import List
 
+import httpx
 import pytz
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
@@ -103,17 +104,24 @@ def get_model_name(model_enum: GptModelDefines) -> str:
     return model_enum.value
 
 
+def timeout_config() -> httpx.Timeout:
+    return httpx.Timeout(180, connect=60)
+
 def official_client():
-    return OpenAI(api_key=official_api_key())
+    return OpenAI(
+        timeout=timeout_config(),
+        api_key=official_api_key())
 
 
 def official_safe_client():
     return OpenAI(
+        timeout=timeout_config(),
         base_url=get_file_content(OFFICIAL_SAFE_URL) + '/v1',
         api_key=official_api_key())
 
 def proxy_client():
     return OpenAI(
+        timeout=timeout_config(),
         api_key=get_file_content(PROXY_API_FILE),
         base_url=get_file_content(PROXY_URL) + '/v1')
 
