@@ -105,7 +105,7 @@ def get_model_name(model_enum: GptModelDefines) -> str:
 
 
 def timeout_config() -> httpx.Timeout:
-    return httpx.Timeout(180, connect=60)
+    return httpx.Timeout(600, connect=120)
 
 def official_client():
     return OpenAI(
