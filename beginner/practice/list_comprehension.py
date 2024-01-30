@@ -1,4 +1,4 @@
-def list_compre():
+def list_compare():
     """
     列表生成式用法
     :return:
