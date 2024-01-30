@@ -6,7 +6,7 @@ from beginner.math.hannota import hanoi_tower
 from beginner.math.recursion import *
 from beginner.practice.advanced_features import trim
 from beginner.practice.find_min_max import find_min_max
-from beginner.practice.list_comprehension import list_compre
+from beginner.practice.list_comprehension import list_compare
 from beginner.practice.triangles import triangle
 from gpt.constants import OFFICIAL_API_FILE
 from gpt.gpt_utils import get_file_content, get_model_list, completion_top_append_file
@@ -24,6 +24,10 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(result)
 
     def test_print_model_list(self):
+        """
+        打印GPT目前可用model list
+        :return:
+        """
         model_list = get_model_list()
         not_empty = False
         for model in model_list:
@@ -36,8 +40,8 @@ class MyTestCase(unittest.TestCase):
         api_key = get_file_content(OFFICIAL_API_FILE)
         self.assertIsNotNone(api_key, "api key shouldn't null")
 
-    def test_list_compre(self):
-        L2 = list_compre()
+    def test_list_compare(self):
+        L2 = list_compare()
         print(L2)
         self.assertTrue(L2 == ['hello', 'world', 'apple'], '测试失败!')
 

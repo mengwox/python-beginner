@@ -52,7 +52,7 @@ def get_current_time() -> str:
 @timing_decorator
 def get_chat_completion(prompt: str,
                         client: OpenAI | None = None,
-                        gpt_model_define: GptModelDefines | None = GptModelDefines.GPT4_TUBRO_PREVIEW_1106) \
+                        gpt_model_define: GptModelDefines | None = GptModelDefines.GPT4_TUBRO_PREVIEW) \
         -> ChatCompletion:
     """
     get GPT Response Chat Completion
@@ -127,6 +127,9 @@ def proxy_client():
 
 
 def get_model_list() -> List[str]:
+    """
+    :return: list of model names
+    """
     client = official_client()
     models = client.models.list()
     model_names = list()

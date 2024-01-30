@@ -7,10 +7,10 @@ prompt = get_file_content(PROMPT_FILE)
 # client = official_client()
 client = official_safe_client()
 # 所用模型
-model = GptModelDefines.GPT4_TUBRO_PREVIEW_1106
+model = GptModelDefines.GPT4_TUBRO_PREVIEW
 
 # 获取gpt api completion, 打印内容并写入文件
-completion = get_chat_completion(prompt, client, model)
+completion = get_chat_completion(prompt, client)
 resp_cont = completion.choices[0].message.content
 current_time = get_current_time()
 usage_count = completion.usage
@@ -26,8 +26,8 @@ formatted_string = f"""
 
 {resp_cont}
 
-总token: {usage_count.total_tokens}, input token: {usage_count.prompt_tokens}, 
-output token: {usage_count.completion_tokens}:
+total tokens: {usage_count.total_tokens}, input tokens: {usage_count.prompt_tokens}, 
+output tokens: {usage_count.completion_tokens}
 
 ---
 """

@@ -2,11 +2,12 @@ from enum import Enum
 
 
 class GptModelDefines(Enum):
-	GPT4_TUBRO_PREVIEW_1106 = "gpt-4-1106-preview"
+	GPT4_1106_PREVIEW = "gpt-4-1106-preview"
+	GPT4_VISION_PREVIEW = "gpt-4-vision-preview"
 	""" input: $0.01 / 1K token; output: $0.03 / 1K tokens """
-	GPT4_TUBRO_VISION_PREVIEW_1106 = "gpt-4-1106-vision-preview"
+
+	GPT4_TUBRO_PREVIEW = "gpt-4-turbo-preview"
 	""" input: $0.01 / 1K token; output: $0.03 / 1K tokens """
-	# gpt4-tubro model: end
 
 	GPT4 = "gpt-4"
 	""" input: $0.03 / 1K token; output: $0.06 / 1K tokens """
