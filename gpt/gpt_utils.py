@@ -25,8 +25,6 @@ def timing_decorator(func):
     return wrapper
 
 
-
-
 def completion_top_append_file(
         current_content: str,
         file_path: str | None = HISTORY_PROMPT):
@@ -107,21 +105,26 @@ def get_model_name(model_enum: GptModelDefines) -> str:
 def timeout_config() -> httpx.Timeout:
     return httpx.Timeout(600, connect=120)
 
+
 def official_client():
     return OpenAI(
         timeout=timeout_config(),
+        max_retries=0,
         api_key=official_api_key())
 
 
 def official_safe_client():
     return OpenAI(
         timeout=timeout_config(),
+        max_retries=0,
         base_url=get_file_content(OFFICIAL_SAFE_URL) + '/v1',
         api_key=official_api_key())
+
 
 def proxy_client():
     return OpenAI(
         timeout=timeout_config(),
+        max_retries=0,
         api_key=get_file_content(PROXY_API_FILE),
         base_url=get_file_content(PROXY_URL) + '/v1')
 
