@@ -7,7 +7,7 @@ prompt = get_file_content(PROMPT_FILE)
 # client = official_client()
 client = official_safe_client()
 # 所用模型
-model = GptModelDefines.GPT4_TUBRO_PREVIEW
+model = GptModelDefines.GPT4_PREVIEW
 
 # 获取gpt api completion, 打印内容并写入文件
 completion = get_chat_completion(prompt, client)
