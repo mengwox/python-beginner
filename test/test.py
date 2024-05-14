@@ -30,6 +30,7 @@ class MyTestCase(unittest.TestCase):
         """
         model_list = get_model_list()
         not_empty = False
+        print("GPT目前可用模型数: %d" % len(model_list))
         for model in model_list:
             if not not_empty:
                 not_empty = True
