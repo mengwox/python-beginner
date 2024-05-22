@@ -10,7 +10,7 @@ client = official_client()
 model = GptModelDefines.GPT4_O
 
 # 获取gpt api completion, 打印内容并写入文件
-completion = get_chat_completion(prompt, client)
+completion = get_chat_completion(prompt, client, model)
 resp_cont = completion.choices[0].message.content
 current_time = get_current_time()
 usage_count = completion.usage
