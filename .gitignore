@@ -142,4 +142,4 @@ gpt/history/
 *.Obsidian
 
 # token file
-**/token
+quant/tushare/token
