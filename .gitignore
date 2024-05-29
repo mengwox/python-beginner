@@ -140,3 +140,6 @@ gpt/history/
 
 # Obsidian
 *.Obsidian
+
+# token file
+**/token
