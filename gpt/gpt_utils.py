@@ -48,9 +48,32 @@ def get_current_time() -> str:
 
 
 @timing_decorator
+def get_o1_chat_completion(prompt: str,
+                           client: OpenAI | None = None,
+                           gpt_model_define: GptModelDefines | None = GptModelDefines.O1_LATEST) \
+        -> ChatCompletion:
+    """
+    invoke openai o1-preview model:
+    response longer than 'gpt 4o' and response more correctly may.
+    """
+    if client is None:
+        client = official_client()
+    # o1 API使用方式, o1暂只支持role为user/assistant
+    completion = client.chat.completions.create(
+        model=get_model_name(gpt_model_define),
+        messages=[
+            {"role": "assistant", "content": SYSTEM_PROMPT_CHINESE},
+            {"role": "assistant", "content": SYSTEM_PROMPT_FORMAT},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return completion
+
+
+@timing_decorator
 def get_chat_completion(prompt: str,
                         client: OpenAI | None = None,
-                        gpt_model_define: GptModelDefines | None = GptModelDefines.GPT4_TUBRO_PREVIEW) \
+                        gpt_model_define: GptModelDefines | None = GptModelDefines.GPT4_O) \
         -> ChatCompletion:
     """
     get GPT Response Chat Completion
@@ -63,6 +86,7 @@ def get_chat_completion(prompt: str,
     """
     if client is None:
         client = official_client()
+    # gpt 4o相关使用方式
     completion = client.chat.completions.create(
         model=get_model_name(gpt_model_define),
         messages=[

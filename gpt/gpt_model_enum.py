@@ -2,8 +2,8 @@ from enum import Enum
 
 
 class GptModelDefines(Enum):
-	O1_LATEST = "o1-2024-12-17"
-	O1_20241217 = "o1-2024-12-17"
+	O1_LATEST = "o1-preview"
+	O1_MINI = "o1-mini"
 	# chatgpt-4o-latest
 	CHATGPT_4o_LATEST = "chatgpt-4o-latest"
 	GPT4_O = "gpt-4o"

@@ -6,11 +6,10 @@ prompt = get_file_content(PROMPT_FILE)
 # client = proxy_client()
 client = official_client()
 # client = official_safe_client()
-# 所用模型
-model = GptModelDefines.O1_20241217
 
 # 获取gpt api completion, 打印内容并写入文件
-completion = get_chat_completion(prompt, client, model)
+completion = get_o1_chat_completion(prompt, client)
+# completion = get_chat_completion(prompt, client, GptModelDefines.GPT4_O)
 resp_cont = completion.choices[0].message.content
 current_time = get_current_time()
 usage_count = completion.usage
