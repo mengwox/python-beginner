@@ -2,6 +2,8 @@ from enum import Enum
 
 
 class GptModelDefines(Enum):
+	# chatgpt-4o-latest
+	CHATGPT_4o_LATEST = "chatgpt-4o-latest"
 	GPT4_O = "gpt-4o"
 
 	GPT4_PREVIEW = "gpt-4-0125-preview"
