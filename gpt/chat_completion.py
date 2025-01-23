@@ -1,35 +1,38 @@
+#! python3
+
 from gpt.gpt_utils import *
 
-# 提示词
-prompt = get_file_content(PROMPT_FILE)
-# 客户端
-# client = proxy_client()
-client = official_client()
-# client = official_safe_client()
+if __name__ == '__main__':
+    # 提示词
+    prompt = get_file_content(PROMPT_FILE)
+    # 客户端
+    # client = proxy_client()
+    client = official_client()
+    # client = official_safe_client()
 
-# 获取gpt api completion, 打印内容并写入文件
-completion = get_o1_chat_completion(prompt, client)
-# completion = get_chat_completion(prompt, client, GptModelDefines.GPT4_O)
-resp_cont = completion.choices[0].message.content
-current_time = get_current_time()
-usage_count = completion.usage
-# 构建要写入文件的字符串
-formatted_string = f"""
-{current_time}
+    # 获取gpt api completion, 打印内容并写入文件
+    completion = get_o1_chat_completion(prompt, client)
+    # completion = get_chat_completion(prompt, client, GptModelDefines.GPT4_O)
+    resp_cont = completion.choices[0].message.content
+    current_time = get_current_time()
+    usage_count = completion.usage
+    # 构建要写入文件的字符串
+    formatted_string = f"""
+    {current_time}
 
-***Me :***
+    ***Me :***
 
-# {prompt}
+    # {prompt}
 
-***ChatGpt {completion.model}:***
+    ***ChatGpt {completion.model}:***
 
-{resp_cont}
+    {resp_cont}
 
-total tokens: {usage_count.total_tokens}, input tokens: {usage_count.prompt_tokens}, 
-output tokens: {usage_count.completion_tokens}
+    total tokens: {usage_count.total_tokens}, input tokens: {usage_count.prompt_tokens}, 
+    output tokens: {usage_count.completion_tokens}
 
----
-"""
-print('\n' + formatted_string)
-# 对话写入文件
-completion_top_append_file(formatted_string)
+    ---
+    """
+    print('\n' + formatted_string)
+    # 对话写入文件
+    completion_top_append_file(formatted_string)
