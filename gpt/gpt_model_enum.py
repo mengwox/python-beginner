@@ -26,3 +26,15 @@ class GptModelDefines(Enum):
 	# Other Models:
 	# Image models
 	DEFAULT = O1_LATEST
+
+
+class DeepseekModel(Enum):
+	"""
+    DEEPSEEK AI大模型枚举类
+    """
+	# model='deepseek-chat' 即可调用 DeepSeek-V3
+	DEFAULT = 'deepseek-chat'
+	# model='deepseek-reasoner'，即可调用 DeepSeek-R1
+	REASONER = 'deepseek-reasoner'
+	# DeepSeek-R1, 字节部署版本
+	BYTE_DANCE_R1 = 'DeepSeek-R1'

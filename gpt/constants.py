@@ -17,6 +17,8 @@ LOCAL_API_PATH = 'D:\\github\\desktop\\python-beginner\\gpt\\api_key\\'
 OFFICIAL_API_FILE = LOCAL_API_PATH + 'official-api-key'
 # 官方API URL代理(防封, 无墙)
 OFFICIAL_SAFE_URL = LOCAL_API_PATH + 'official-safe-url'
+# Deepseek API key
+Deepseek_API_FILE = LOCAL_API_PATH + 'deepseek-api-key'
 # proxy api key
 PROXY_API_FILE = LOCAL_API_PATH + 'proxy-api-key'
 # proxy api url

@@ -10,7 +10,7 @@ from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
 from .constants import *
-from .gpt_model_enum import GptModelDefines
+from .gpt_model_enum import *
 
 
 def timing_decorator(func):
@@ -46,6 +46,28 @@ def get_current_time() -> str:
     return datetime.now(pytz.timezone('Asia/Shanghai')) \
         .strftime('%Y-%m-%d %H:%M:%S')
 
+
+@timing_decorator
+def get_deepseek_completion(prompt: str,
+                            client: OpenAI | None = None,
+                            gpt_model_define: DeepseekModel | None = DeepseekModel.REASONER) \
+        -> ChatCompletion:
+    """
+    invoke openai o1-preview model:
+    response longer than 'gpt 4o' and response more correctly may.
+    """
+    if client is None:
+        client = official_client()
+    # o1 API使用方式, o1暂只支持role为user/assistant
+    completion = client.chat.completions.create(
+        model=get_model_name(gpt_model_define),
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT_CHINESE},
+            {"role": "system", "content": SYSTEM_PROMPT_FORMAT},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return completion
 
 @timing_decorator
 def get_o1_chat_completion(prompt: str,
@@ -122,7 +144,7 @@ def proxy_api_key() -> str:
     return get_file_content(PROXY_API_FILE)
 
 
-def get_model_name(model_enum: GptModelDefines) -> str:
+def get_model_name(model_enum) -> str:
     return model_enum.value
 
 
@@ -137,6 +159,17 @@ def official_client():
         api_key=official_api_key())
 
 
+def client_deepseek():
+    """
+    Deepseek API使用
+    """
+    return OpenAI(
+        base_url='https://api.deepseek.com/v1',
+        timeout=timeout_config(),
+        max_retries=0,
+        api_key=get_file_content(Deepseek_API_FILE))
+
+
 def official_safe_client():
     return OpenAI(
         timeout=timeout_config(),
@@ -146,6 +179,7 @@ def official_safe_client():
 
 
 def proxy_client():
+    """使用Aihubmix代理,访问各AI大模型"""
     return OpenAI(
         timeout=timeout_config(),
         max_retries=0,
